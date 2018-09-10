@@ -57,7 +57,7 @@ bot.on("message", async message => {
   
     voiceChannel.join().then(connection =>
     {
-     const dispatcher = connection.playFile('./julcsa.mp3');
+     const dispatcher = connection.playFile('./haha.mp3');
      dispatcher.on("end", end => {
        voiceChannel.leave();
        });
@@ -95,7 +95,42 @@ if (command.startsWith('aj'))
        voiceChannel.leave();
        });
    }).catch(err => console.log(err));
+}
+  
+  
+if (command.startsWith('g2tg'))
+  {
+    
+    
+    message.channel.send("G2TG Skacok! Mehet a hype a chatbe!")
+    
+    if (!message.member.voiceChannel) {
+    let voice = new Discord.RichEmbed()
+    .setTitle("❗ Julcsa ❗")
+    .setColor("DARK_RED")
+    .setDescription(`\`\`\`Csatlakozz be egy szobába, hogy betudjak lépni hozzád!\`\`\``)
+    setTimeout(() => { message.channel.send(voice); }, 2000);
+  }
+    if (message.guild.me.voiceChannel){
+    let inside = new Discord.RichEmbed()
+    .setTitle("❗ Julcsa ❗")
+    .setColor("DARK_RED")
+    .setDescription(`\`\`\`Bocs, de már a szobában vagyok.\`\`\``)
+    setTimeout(() => { message.channel.send(inside); }, 2000);
+    }
+    
+  
+  
+    voiceChannel.join().then(connection =>
+    {
+     const dispatcher = connection.playFile('./G2TG.mp3');
+     dispatcher.on("end", end => {
+       voiceChannel.leave();
+       });
+   }).catch(err => console.log(err));
 }  
+  
+  
 
   
   if(command.startsWith("leave"))
